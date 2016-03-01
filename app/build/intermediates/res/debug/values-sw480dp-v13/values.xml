@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/values-sw480dp/bools.xml -->
+    <eat-comment/>
+    <bool name="portrait_only">false</bool>
+    <bool name="screen_big">true</bool>
+</resources>

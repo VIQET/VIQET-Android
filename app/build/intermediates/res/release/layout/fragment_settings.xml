@@ -1,0 +1,16 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+    <Switch
+        android:id="@+id/switch_access"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/text_switch"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout><!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/layout/fragment_settings.xml -->

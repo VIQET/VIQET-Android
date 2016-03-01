@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/background"
+              android:id="@+id/first_step_background_layout">
+
+    <ImageView
+        android:id="@+id/breadcrumbs"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/bc_one_active"
+        android:layout_alignParentTop="true"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/background"
+        android:layout_below="@id/breadcrumbs"
+        android:text="@string/place_holder_step_no"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/tv_step_number"/>
+
+    <RelativeLayout
+        android:id="@+id/rel_layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/footer_background"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+            android:padding="8dp"
+            android:background="@android:color/transparent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/btn_back"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/next"
+            android:padding="8dp"
+            android:background="@android:color/transparent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/btn_next"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/analyze"
+            android:padding="8dp"
+            android:background="@android:color/transparent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/btn_results"/>
+
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lv_photos_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:layout_below="@id/tv_step_number"
+        android:layout_above="@id/rel_layout_bottom"/>
+
+</RelativeLayout><!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/layout/fragment_photo_categories.xml -->

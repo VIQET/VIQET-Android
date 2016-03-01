@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.vqeg.viqet"
+    android:versionCode="6"
+    android:versionName="1.11" >
+
+    <uses-sdk
+        android:minSdkVersion="19"
+        android:targetSdkVersion="21" />
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.camera" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/viqet_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Other Activities -->
+        <activity
+            android:name="org.vqeg.viqet.activities.InstructionsActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
+            android:name="org.vqeg.viqet.activities.CameraActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="org.vqeg.viqet.activities.GalleryActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="org.vqeg.viqet.activities.PhotoPreviewActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <!-- Services -->
+        <service android:name="org.vqeg.viqet.services.PhotoInspectorService" />
+
+        <!-- Register the Alarm Receiver -->
+        <receiver android:name="org.vqeg.viqet.alarms.PhotoInspectorAlarmReceiver" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name="org.vqeg.viqet.activities.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.vqeg.viqet.activities.PhotoDetailActivity"
+            android:label="@string/title_activity_photo_detail"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name="org.vqeg.viqet.activities.ResultDetailActivity"
+            android:label="@string/title_activity_result_detail"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name="org.vqeg.viqet.activities.PhotoResultActivity"
+            android:label="@string/title_activity_photo_result"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+    </application>
+
+</manifest>

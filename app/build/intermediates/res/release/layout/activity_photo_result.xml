@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ExpandableListView
+        android:id="@+id/elv_results_photo_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:groupIndicator="@null">
+    </ExpandableListView>
+
+</RelativeLayout><!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/layout/activity_photo_result.xml -->

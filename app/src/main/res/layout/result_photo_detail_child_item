@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="5"
+    android:layout_centerInParent="true"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rel_layout_child_photo"
+        android:layout_width="120dp"
+        android:layout_height="100dp">
+        <ImageView
+            android:id="@+id/childPhotoImage"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="5dp"
+            android:contentDescription="@string/imageDescription"
+            android:src="@drawable/add_photo"
+            android:scaleType="fitXY"/>
+    </RelativeLayout>
+
+
+    <!--Results-->
+    <TextView
+        android:id="@+id/child_image_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/rel_layout_child_photo" />
+
+    <TextView
+        android:id="@+id/photoMOSScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_below="@id/child_image_name"
+        android:layout_toEndOf="@id/rel_layout_child_photo"
+        />
+</RelativeLayout>

@@ -1,0 +1,193 @@
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<resources>
+    <!-- App Information -->
+    <string name="app_name">VIQET</string>
+
+    <!-- Content description for images on all pages -->
+    <string name="imageDescription">This is an image</string>
+
+    <!-- Generic OK and Cancel -->
+    <string name="ok">OK</string>
+    <string name="cancel">CANCEL</string>
+
+    <!-- Main Page -->
+    <string name="appSettings">App Settings</string>
+    <string name="license_name">License Agreement</string>
+    <string name="setting">GOTO SETTINGS</string>
+    <string name="accept">ACCEPT</string>
+    <string name="dismiss">DECLINE</string>
+    <string name="start">START</string>
+    <string name="downloadingMethodology">Downloading list of categories and example photos</string>
+    <string name="noInternetToDownloadMethodologyError">No internet connection found. The app needs to download the latest list of categories and examples.</string>
+    <string name="noInternetError">No internet connection found.</string>
+    <string name="retry">Try Again</string>
+    <string name="license1">The VIQET app will upload your test photos to the VIQET cloud service, where they will be used to improve the evaluation of image quality,
+        to support a wider range of devices, and to develop new quality evaluation technologies.  No personal or device specific information is collected or associated with the test photos.
+    </string>
+    <string name="license2">Click on ‘Accept’ to allow uploading of test photos.
+    </string>
+    <string name="license3">Declining will disable the ‘Upload Test Photos’ and will not allow the app to evaluate photos.
+    </string>
+    <string name="license4">You can change this from the ‘Settings’x in the main menu.
+    </string>
+    <string name="licenseAcceptance">licence</string>
+
+    <!-- Options Page -->
+    <string name="networkOptions">Network</string>
+    <string name="useWiFi">Use WiFi</string>
+    <string name="useWiFiSummary">Allow the use of WiFi.</string>
+    <string name="useMobile">Use Mobile Data</string>
+    <string name="useMobileSummary">Allow the use of 2G/3G/4G data. This might increase your cellphone bill</string>
+
+    <string name="developerOptions">Developer Options</string>
+
+    <string name="allowIncompleteResultTitle">Show incomplete result</string>
+    <string name="allowIncompleteResultSummary">Show overall result for incomplete set</string>
+
+    <string name="mosModelType">MOS Model</string>
+    <string name="mosModelTypeSummary">Select the type of MOS model to use</string>
+    <string name="GenericMosModelName">Generic MOS model</string>
+    <string name="GenericMosModelValue">GenericMosLibSVM</string>
+    <string name="CategoryMosModelName">Category specific MOS model</string>
+    <string name="CategoryMosModelValue">CategoryMosLibSVM</string>
+
+    <string name="serverTitle">Server</string>
+    <string name="serverSummary">Select which server the app connects to</string>
+    <string name="productionServerName">Production Server</string>
+    <string name="productionServerValue">http://viqetservice.cloudapp.net</string>
+    <string name="stagingServerName">Staging Server</string>
+    <string name="stagingServerValue">http://a8714f64e17a4d13ad719a472defbfd2.cloudapp.net</string>
+
+    <!-- Result Browser -->
+    <string name="resultBrowserTitle">ResultBrowser</string>
+    <string name="addResults">+</string>
+    <string name="placeholderTestName">Photo Name</string>
+    <string name="addResultPopupTitle">Add a New Test</string>
+    <string name="renameResultPopupTitle">Rename Test</string>
+    <string name="addResultPopupMessage">Enter Test Name: </string>
+    <string name="delete">Delete</string>
+    <string name="rename">Rename </string>
+    <string name="deleteResultPopupTitle">Confirm Delete Test</string>
+    <string name="deleteResultPopupMessage">Delete Test</string>
+    <string name="addResultOverlayMessage">"To begin, click this button to create a new test \n(Tap to dismiss)</string>
+    <string name="clickResultOverlayMessage">Click on test to start adding photos.\n(Tap to dismiss)</string>
+
+    <!-- Select Photos -->
+    <string name="selectPhotosTitle">Select Photos</string>
+    <string name="placeholderCategoryName">Category Name</string>
+    <string name="placeholderPhotoName">Add Photo</string>
+    <string name="deletePhoto">Delete Photo</string>
+    <string name="takeNewPhoto">Replace Photo</string>
+    <string name="analyzePhoto">Get Photo Details</string>
+    <string name="viewPhoto">View Photo</string>
+    <string name="viewPhotoDetails">View Photo Details</string>
+    <string name="deletePhotoPopupTitle">Confirm Delete Photo</string>
+    <string name="deletePhotoPopupMessage">Delete Photo</string>
+    <string name="results">Results</string>
+    <string name="uploading">Uploading</string>
+    <string name="checking">Checking</string>
+    <string name="processing">Processing</string>
+    <string name="methodologyNotCompleteError">Please wait for all photos to be analyzed before viewing the results</string>
+    <string name="cloudVersionChangedTitle">Cloud Version Changed</string>
+    <string name="cloudVersionChangedDescription">The algorithms on the cloud have been updated. Do you want to reprocess all the photos with the latest cloud version?</string>
+    <string name="cloudVersionIgnoredWarning">WARNING!!! CLOUD VERSION CHANGE IGNORED</string>
+
+    <!-- Instructions Page -->
+    <string name="instructionsTitle">Instructions</string>
+    <string name="placeholderInstructions">This scene category encompasses postings on a flat wall such as a highly detailed fire evacuation map, mall directory .....</string>
+    <string name="examples">Examples</string>
+    <string name="launchCamera">Take New Picture</string>
+    <string name="launchGallery">Choose Existing</string>
+
+    <!-- Example Photo Page -->
+    <string name="placeholderExampleDescription">This photo is an example of a good case, where the sky can be seen .....</string>
+    <string name="isThisPhotoAcceptable">This is an example of a photo that is</string>
+    <string name="acceptableString">acceptable</string>
+    <string name="notAcceptableString">not acceptable</string>
+
+    <!-- Results View Page -->
+    <string name="resultsViewTitle">Result</string>
+    <string name="OverallMOS">Overall MOS</string>
+    <string name="placeholderValue">0.0</string>
+    <string name="plusMinus">+/-</string>
+    <string name="placeholderCI">0.00</string>
+    <string name="placeholderCategory">Category</string>
+    <string name="details">Details</string>
+    <string name="submissionSuccess">Results submitted successfully</string>
+    <string name="noInternetErrorForSubmission">Could not submit results. No network connection.</string>
+
+    <!-- Results Details Page -->
+    <string name="resultsDetailsTitle">Result</string>
+    <string name="aggregatedDetails">Aggregated Details</string>
+    <string name="deleteResult">Delete Result</string>
+
+    <!-- Photo Details Page -->
+    <string name="photoDetailsTitle">Photo Details</string>
+    <string name="placeholderPhotoDisplayName">Photo Name</string>
+    <string name="qualityFeatures">Quality Features</string>
+    <string name="placeholderVisualizationName">Visualization Name</string>
+    <string name="previousVisualization">&lt;</string>
+    <string name="nextVisualization">&gt;</string>
+    <string name="photoFeature">Feature</string>
+    <string name="photoValue">Value</string>
+
+    <!-- Photo Preview Page -->
+    <string name="photoPreviewPlaceholderTitle">Photo Preview</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+
+    <!-- AboutFragment -->
+    <string name="about_fragment_first_para">VQEG Image Quality Evaluation Tool (VIQET) is a free and open source tool for evaluating quality of consumer photos.
+                                                VIQET is easy to use and based on objective no-reference image quality evaluation methods.
+                                                More information about VQEG projects is available at www.vqeg.org</string>
+    <string name="about_fragment_second_para">This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+                                                which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html</string>
+    <string name="about_fragment_third_para">Version: </string>
+
+    <!-- HomeFragment -->
+    <string name="btn_start_label">Start New Test</string>
+    <string name="btn_tips_label">Tips</string>
+    <string name="version_change_title">Version Updated</string>
+    <string name="text_dialog_version_change">VIQET MOS estimation service has been updated. The current version information is displayed in the Home screen. Results with the new version are not comparable to the previous versions.</string>
+
+    <!--ResultsFragment -->
+    <string name="test_name">Test Name</string>
+    <string name="mos_score">MOS Score</string>
+    <string name="dialog_message_fetch_results">Fetching Results...</string>
+
+    <!--PhotoCategoriesFragment -->
+    <string name="place_holder_step_no">Step #</string>
+    <string name="btn_next">NEXT</string>
+    <string name="btn_back">BACK</string>
+    <string name="btn_result">ANALYZE</string>
+    <string name="dialog_message_fetch_image_data">Fetching Images...</string>
+    <string name="no_network_dialog_message">Please connect to the network to process images</string>
+    <string name="no_network_dialog_title">No network connection</string>
+    <string name="title_activity_photo_detail">PhotoDetailActivity</string>
+    <string name="title_activity_result_detail">ResultDetailActivity</string>
+    <string name="title_activity_photo_result">PhotoResultActivity</string>
+    <string name="dialog_less_photos_in_category">Please upload 5 Photos to continue</string>
+    <string name="dialog_title_less_photos_in_category">Missing Photos!</string>
+
+    <!--HelpFragment-->
+    <string name="previous">back</string>
+    <string name="next">next</string>
+
+    <!--GalleryActivity-->
+    <string name="dialog_message_select_photo">Selecting Photo</string>
+    <!--SettingsFragment-->
+    <string name="text_switch">Upload test photos for quality evaluation</string>
+</resources>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/photoDetailName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/details"
+            android:layout_weight="3"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/photoDetailValue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|right"
+            android:text="@string/placeholderValue"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+

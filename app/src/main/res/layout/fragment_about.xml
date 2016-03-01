@@ -1,0 +1,45 @@
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_about_first_para"
+            android:text="@string/about_fragment_first_para"
+            android:textColor="@android:color/white"
+            android:gravity="center"/>
+
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_about_second_para"
+            android:layout_marginTop="20dp"
+            android:text="@string/about_fragment_second_para"
+            android:textColor="@android:color/white"
+            android:gravity="center"/>
+
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_about_third_para"
+            android:layout_marginTop="20dp"
+            android:text="@string/about_fragment_third_para"
+            android:textColor="@android:color/white"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+</ScrollView>

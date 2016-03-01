@@ -1,0 +1,99 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rel_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.DrawerLayout
+
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- The main content view -->
+        <FrameLayout
+            android:id="@+id/content_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- The navigation drawer -->
+        <ListView android:id="@+id/left_drawer"
+                  android:layout_width="240dp"
+                  android:layout_height="match_parent"
+                  android:layout_gravity="start"
+                  android:choiceMode="singleChoice"
+                  android:divider="@android:color/transparent"
+                  android:dividerHeight="0dp"
+                  android:background="#111"/>
+
+    </android.support.v4.widget.DrawerLayout>
+
+    <LinearLayout
+        android:id="@+id/downloading_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/downloadingMethodology"
+            android:textSize="20sp" />
+
+        <ProgressBar
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            style="?android:attr/progressBarStyleLarge"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/internet_required_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:text="@string/noInternetToDownloadMethodologyError"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/retryDownload"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="@string/retry"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+</RelativeLayout><!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/layout/activity_main.xml -->

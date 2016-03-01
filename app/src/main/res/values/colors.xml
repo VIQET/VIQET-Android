@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<resources>
+
+    <color name="background">#1B3639</color>
+
+    <!--Main Activity-->
+    <color name="drawer_background">#111</color>
+    <!--Home Fragment-->
+    <color name="start_button_background">#66C767</color>
+    <color name="footer_background">#2A7A81</color>
+    <color name="tv_version_background">#556466</color>
+
+    <!--About Fragment-->
+    <color name="about_page_link_color">#0000EE</color>
+
+    <color name="sub_menu_background">#687C7F</color>
+    <color name="menu_background">#347C87</color>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:weightSum="9"
+    android:background="@color/menu_background">
+
+    <ImageView
+        android:id="@+id/group_icon"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/forward_arrow"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="5dp"/>
+    <TextView
+        android:id="@+id/categoryName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="7"
+        android:gravity="start|center_vertical"
+        android:layout_gravity="center_vertical"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="@string/placeholderCategory"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="end"
+        android:weightSum="7"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/categoryMOS"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_weight="4.5"
+            android:gravity="right"
+            android:text="@string/placeholderValue"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"/>
+        <TextView
+            android:id="@+id/categoryMOSVariability"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="10sp"
+            android:gravity="right"
+            android:layout_weight="2.5"
+            android:text="@string/placeholderValue"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</LinearLayout>

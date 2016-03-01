@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<ScrollView
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        android:scrollbarAlwaysDrawVerticalTrack="true">
+        <TextView
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/license1"/>
+        <TextView
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/license2"/>
+        <TextView
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/license3"/>
+        <TextView
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/license4"/>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.vqeg.viqet" >
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.camera" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/viqet_logo"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <!-- Other Activities -->
+        <activity
+            android:name="org.vqeg.viqet.activities.InstructionsActivity"
+            android:theme="@style/Theme.AppCompat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="org.vqeg.viqet.activities.CameraActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="org.vqeg.viqet.activities.GalleryActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name="org.vqeg.viqet.activities.PhotoPreviewActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <!-- Services -->
+        <service android:name="org.vqeg.viqet.services.PhotoInspectorService" />
+
+        <!-- Register the Alarm Receiver -->
+        <receiver android:name="org.vqeg.viqet.alarms.PhotoInspectorAlarmReceiver" />
+
+        <!-- Main Activity -->
+        <activity
+            android:name="org.vqeg.viqet.activities.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.AppCompat" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.vqeg.viqet.activities.PhotoDetailActivity"
+            android:label="@string/title_activity_photo_detail"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name="org.vqeg.viqet.activities.ResultDetailActivity"
+            android:label="@string/title_activity_result_detail"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+        <activity
+            android:name="org.vqeg.viqet.activities.PhotoResultActivity"
+            android:label="@string/title_activity_photo_result"
+            android:theme="@style/Theme.AppCompat" >
+        </activity>
+    </application>
+
+</manifest>

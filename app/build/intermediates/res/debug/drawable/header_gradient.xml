@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+      android:startColor="#0093E1"
+      android:endColor="#0093E1"
+      android:angle="-270" /> 
+</shape>
+<!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/drawable/header_gradient.xml -->

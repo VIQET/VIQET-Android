@@ -1,0 +1,27 @@
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="zero">0dp</dimen>
+
+    <!--Main Activity-->
+    <dimen name="drawer_width">0dp</dimen>
+    <dimen name="progress_bar_width">50dp</dimen>
+    <dimen name="progress_bar_height">50dp</dimen>
+
+    <!--Home Fragment-->
+    <dimen name="start_button_padding">10dp</dimen>
+    <dimen name="button_text_size">16sp</dimen>
+
+    <dimen name="drawer_text_size">14sp</dimen>
+
+</resources>

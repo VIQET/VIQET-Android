@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="C:\Users\rkalidin\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.3.1\ecb6e1f8e4b0e84c4b886c2f14a1500caf309757\gson-2.3.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="ecb6e1f8e4b0e84c4b886c2f14a1500caf309757">
+        <dex dex="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\pre-dexed\debug\gson-2.3.1-86c9967ae4dd5112779129691b04dae95192a5ae.jar" />
+    </item>
+    <item
+        jar="C:\Users\rkalidin\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.0.1\support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\pre-dexed\debug\support-annotations-23.0.1-b0624e4629d5ce5186fc2c36951c6ad8002c4453.jar" />
+    </item>
+    <item
+        jar="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\pre-dexed\debug\classes-044cb3887662f64c24f550efa2eb86c2ad8b15d5.jar" />
+    </item>
+    <item
+        jar="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\21.0.3\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
+        <dex dex="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\pre-dexed\debug\classes-4eea6525cab756535a5ca1c24cb26fedeb679900.jar" />
+    </item>
+    <item
+        jar="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.0.1\classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4356e230a981d1bbf047d848b91bc0d9b7c5bacc">
+        <dex dex="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\pre-dexed\debug\classes-92e485ec92a2e5600dc2a1fe563d7214bac04c63.jar" />
+    </item>
+    <item
+        jar="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.0.1\libs\internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="C:\Users\rkalidin\Documents\GitHub\VIQETAndroid\app\build\intermediates\pre-dexed\debug\internal_impl-23.0.1-caf7b338f0bcbae733d217588f4d9ea676cd56ca.jar" />
+    </item>
+
+</items>

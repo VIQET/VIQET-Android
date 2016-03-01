@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Options Page MOS Model-->
+    <string-array name="mosModelNames">
+        <item name="CategoryMOS">@string/CategoryMosModelName</item>
+        <item name="GenericMOS">@string/GenericMosModelName</item>
+    </string-array>
+    <string-array name="mosModelValues">
+        <item name="CategoryMOS">@string/CategoryMosModelValue</item>
+        <item name="GenericMOS">@string/GenericMosModelValue</item>
+    </string-array>
+    
+    <!-- Options Page Server Name-->
+	<string-array name="serverNames">
+        <item name="Production">@string/productionServerName</item>
+        <item name="Staging">@string/stagingServerName</item>
+    </string-array>
+    <string-array name="serverValues">
+        <item name="Production">@string/productionServerValue</item>
+        <item name="Staging">@string/stagingServerValue</item>
+    </string-array>
+
+    <string-array name="options_array">
+        <item name="Newtest">Home</item>
+        <item name="Results">Results</item>
+        <item name="Help">Help</item>
+        <item name="About">About</item>
+        <item name="Settings">Settings</item>
+    </string-array>
+</resources>

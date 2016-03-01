@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="5dp"
+    android:background="@color/sub_menu_background">
+    <TextView
+        android:id="@+id/featureDetailName"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="5"
+        android:gravity="left|center_vertical"
+        android:text="@string/details"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"/>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:gravity="right"
+        android:weightSum="7"
+        android:orientation="vertical">
+            <TextView
+                android:id="@+id/featureDetailValue"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4.5"
+                android:gravity="right"
+                android:text="@string/placeholderValue"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000000"/>
+            <TextView
+                android:id="@+id/featureDetailVariability"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textSize="10sp"
+                android:gravity="right"
+                android:layout_weight="2.5"
+                android:text="@string/placeholderValue"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#000000"/>
+    </LinearLayout>
+</LinearLayout>
+<!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/layout/result_view_category_detail_item.xml -->

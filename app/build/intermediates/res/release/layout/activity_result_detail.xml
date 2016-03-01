@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <TextView
+        android:id="@+id/tv_overallmos"
+        android:layout_alignParentTop="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_margin="20dp"
+        android:text="@string/OverallMOS"
+        android:textStyle="bold"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"/>
+
+    <RatingBar
+        android:id="@+id/mosRatingBar"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_overallmos"
+        android:layout_centerHorizontal="true"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="0.0"
+        android:stepSize="0.01" />
+
+    <LinearLayout
+        android:id="@+id/ll_mos_score"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mosRatingBar"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/overallMOS"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/placeholderValue"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_margin="5dp"
+            android:text="@string/plusMinus"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/overallMOSCI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/placeholderCI"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+    <!--<Button-->
+        <!--android:id="@+id/details"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:gravity="center"-->
+        <!--android:text="@string/details"-->
+        <!--android:textColor="#FFFFFF"-->
+        <!--android:textStyle="bold"-->
+        <!--android:padding="20dp"-->
+        <!--android:background="@color/footer_background" />-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_details"
+        android:background="@color/footer_background"
+        android:layout_alignParentBottom="true">
+        <ImageButton
+            android:id="@+id/details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="8dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/details"
+            android:background="@android:color/transparent"/>
+    </RelativeLayout>
+
+
+    <ExpandableListView
+        android:id="@+id/elv_results_detail"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:groupIndicator="@null"
+        android:layout_below="@id/ll_mos_score"
+        android:layout_above="@id/rl_details"
+        android:gravity="center">
+    </ExpandableListView>
+
+</RelativeLayout><!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/layout/activity_result_detail.xml -->

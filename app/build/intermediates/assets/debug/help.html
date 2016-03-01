@@ -1,0 +1,429 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>VQEG Image Quality Evaluation To</title>
+<style>
+<!--
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	}
+p.MsoTocHeading
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	}
+p.MsoToc1
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	}
+p.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:11.0pt;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	}
+h1
+	{margin-top:12.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:normal}
+h2
+	{margin-top:2.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:107%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	font-weight:normal}
+span.Heading2Char
+	{font-family:"Calibri Light",sans-serif;
+	color:#2E74B5;
+	}
+-->
+</style>
+</head>
+
+<body>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="15">
+	<tr>
+		<td><font face="Calibri" size="6">VQEG Image Quality Evaluation 
+Tool (VIQET) User Manual</font></td>
+	</tr>
+	<tr>
+		<td>
+<p class="MsoTocHeading"><b><font size="5" face="Calibri">Contents</font></b></p>
+<p class="MsoToc1">&nbsp;</p>
+<p class="MsoToc1"><font size="5" face="Calibri"><font color="#336699">
+<a style="text-decoration: none; text-underline: single" href="#_Toc437504679">
+<font color="#2E74B5">1.</font></a></font><a style="color: blue; text-decoration: none; text-underline: single" href="#_Toc437504679"><span style="color: #2E74B5; ">
+</span></a><font color="#2E74B5">&nbsp;</font><font color="#336699"><a style="text-decoration: underline; text-underline: single" href="#_Toc437504679"><font color="#2E74B5">Introduction</font></a></font></font><br>
+&nbsp;</p>
+<p class="MsoToc1"></p>
+<p class="MsoToc1"><font size="5" face="Calibri"><font color="#336699">
+<a style="text-decoration: none; text-underline: single" href="#_Toc437504680">
+<font color="#2E74B5">2.</font></a></font><a style="color: blue; text-decoration: none; text-underline: single" href="#_Toc437504680"><span style="color: #2E74B5; ">
+</span></a><font color="#2E74B5">&nbsp;</font><font color="#336699"><a style="text-decoration: underline; text-underline: single" href="#_Toc437504680"><font color="#2E74B5">VIQET Software</font></a></font></font><br>
+&nbsp;</p>
+<p class="MsoToc1"></p>
+<p class="MsoToc1"><font size="5" face="Calibri"><font color="#336699">
+<a style="text-decoration: none; text-underline: single" href="#_Toc437504681">
+<font color="#2E74B5">3.</font></a></font><a style="color: blue; text-decoration: none; text-underline: single" href="#_Toc437504681"><span style="color: #2E74B5; ">
+</span></a><font color="#2E74B5">&nbsp;</font><font color="#336699"><a style="text-decoration: underline; text-underline: single" href="#_Toc437504681"><font color="#2E74B5">Using VIQET App to analyze photos</font></a></font></font><br>
+<br>
+</p>
+<p class="MsoToc2"><font size="5" face="Calibri">&nbsp;&nbsp; <a style="color: #2E74B5; text-decoration: underline; text-underline: single" href="#_Toc437504682">General Guidelines for Capturing Test Photos</a></font><br>
+<br>
+</p>
+<p class="MsoToc2"><font size="5" face="Calibri">&nbsp;&nbsp; <a style="color: #2E74B5; text-decoration: underline; text-underline: single" href="#_Toc437504683">Analyze 
+Test Photos</a></font><br>
+&nbsp;</p>
+<p class="MsoToc1"><font size="5" face="Calibri"><font color="#336699">
+<a style="text-decoration: none; text-underline: single" href="#_Toc437504684">
+<font color="#2E74B5">4.</font></a></font><font color="#2E74B5"> </font>
+<a style="color: blue; text-decoration: none; text-underline: single" href="#_Toc437504684">
+<span style="color: #2E74B5; ">
+&nbsp;</span></a><font color="#336699"><a style="text-decoration: underline; text-underline: single" href="#_Toc437504684"><font color="#2E74B5">Support</font></a></font></font><br>
+&nbsp;</p>
+<p class="MsoToc1"><font size="5" face="Calibri"><font color="#336699">
+<a style="text-decoration: none; text-underline: single" href="#_Toc437504685">
+<font color="#2E74B5">5.</font></a></font><font color="#2E74B5"> </font>
+<a style="color: blue; text-decoration: none; text-underline: single" href="#_Toc437504685">
+<span style="color: #2E74B5; ">
+&nbsp;</span></a><font color="#336699"><a style="text-decoration: underline; text-underline: single" href="#_Toc437504685"><font color="#2E74B5">Index</font></a></font></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<h1><a name="_Toc437504679"><b><font face="Calibri" size="5">1.</font></b><span style="font-style: normal; font-variant: normal; font-family: Calibri; font-weight: 700"><font size="5">
+</font></span><b><font size="5" face="Calibri">Introduction</font></b></a></h1>
+<p class="Default"><font face="Calibri"><font size="5">VQEG 
+Image Quality Evaluation Tool (VIQET) is an objective, no-reference photo 
+quality evaluation tool. VIQET is free and open source tool designed to evaluate 
+quality of consumer photos. In order to perform photo quality evaluation, VIQET 
+requires a set of photos from the test device. It estimates an overall Mean 
+Opinion Score (MOS) for a device based on the individual image MOS scores in the 
+set. The estimated MOS for each photo is based on a number of image quality 
+features and statistics extracted from the test photo. The mapping from 
+extracted features to MOS is based on psychophysics studies that were conducted 
+to create a large dataset of photos and associated subjective MOS ratings. The 
+studies were used to learn a mapping from quantitative image features to MOS. 
+The estimated MOS by VIQET falls in a range of 1 to 5, where 1 corresponds to a 
+low quality rating and 5 corresponds to excellent quality. More information 
+about VIQET and other VQEG projects is available at </font>
+<a style="color: #FF9933; text-decoration: underline; text-underline: single" href="http://www.VQEG.org">
+<font size="5">www.VQEG.org</font></a></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<h1 style="text-indent: -.25in; margin-left: .25in"><a name="_Toc437504680"><b>
+<font face="Calibri" size="5">2.</font></b><span style="font-style: normal; font-variant: normal; font-family: Calibri; font-weight: 700"><font size="5">
+</font></span><b><font face="Calibri" size="5">VIQET Software</font></b></a></h1>
+<p class="Default"><font face="Calibri" size="5">VIQET users have two tool 
+options: VIQET Desktop application and VIQET App (Android*). Both tools utilize 
+the same image analysis and MOS estimation models and produce exactly same 
+results for a given photo/photo set. The VIQET desktop application is designed 
+to run on a Windows* based PC and allows users to evaluate quality of photos 
+from all mobile devices. All images are evaluated locally in the VIQET desktop 
+application and the analysis system is not required to be connected to the 
+Internet. The VIQET App is designed to run on the Android* mobile device under 
+test and the image analysis is performed by a VIQET cloud service. VIQET App 
+requires the test device to be connected to the Internet to perform the photo 
+quality evaluation.</font></p>
+<p class="Default"><font face="Calibri"><b><font size="5">VIQET 
+Desktop Application:</font></b><font size="5"> The latest version of the VIQET 
+Desktop Application software is available as a free download from </font>
+<a style="color: #FF9933; text-decoration: underline; text-underline: single" href="https://github.com/VIQET/VIQET-Desktop/releases">
+<font size="5">https://github.com/VIQET/VIQET-Desktop/releases</font></a><font size="5">
+</font></font></p>
+<p class="Default"><font face="Calibri"><b><font size="5">VIQET 
+App (Android):</font></b><font size="5"> The latest version of the VIQET App is 
+available as a free download from Google* Play Store. VIQET App for iOS* and 
+Windows* mobile devices are currently not available.</font></font></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<h1 style="text-indent: -.25in; margin-left: .25in"><a name="_Toc437504681"><b>
+<font face="Calibri" size="5">3.</font></b><span style="font-style: normal; font-variant: normal; font-family: Calibri; font-weight: 700"><font size="5">
+</font></span><b><font size="5" face="Calibri">Using VIQET App to analyze photos</font></b></a></h1>
+<h1 style="text-indent: -.25in; margin-left: .25in">
+<font size="5" face="Calibri" color="#000000">There are 2 steps in this process. First is 
+capturing test photos according VIQET methodology, and second, using the tool to 
+analyze</font></h1>
+<h1 style="text-indent: -.25in; margin-left: .25in">
+<font size="5" face="Calibri" color="#000000">them. </font> </font>
+<font face="Calibri" size="5"><br>
+&nbsp;</font></h1>
+<h2 style="text-indent: .25in"><font face="Calibri" size="5">
+<a name="_Toc437504682">General Guidelines for Capturing Test Photos</a></font></h2>
+<p class="MsoNormal" style="margin-left: .25in"><font face="Calibri" size="5">
+VIQET requires test photos in four specific input categories </font></p>
+		<blockquote>
+			<blockquote>
+				<p class="MsoListParagraphCxSpFirst" style="text-indent: -.25in; line-height: normal; text-autospace: none; margin-bottom: 2.8pt">
+				<span style="color: black"><font face="Calibri" size="5">1.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri"><font size="5">
+				</font></span><font face="Calibri" size="5">Outdoor Day - Landscape</font></span></p>
+				<p class="MsoListParagraphCxSpMiddle" style="text-indent: -.25in; line-height: normal; text-autospace: none; margin-bottom: 2.8pt">
+				<span style="color: black"><font face="Calibri" size="5">2.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri"><font size="5">
+				</font></span><font face="Calibri" size="5">Indoor – Wall Hanging</font></span></p>
+				<p class="MsoListParagraphCxSpMiddle" style="text-indent: -.25in; line-height: normal; text-autospace: none; margin-bottom: 2.8pt">
+				</p>
+				<p class="MsoListParagraphCxSpMiddle" style="text-indent: -.25in; line-height: normal; text-autospace: none; margin-bottom: 2.8pt">
+				<span style="color: black"><font face="Calibri" size="5">3.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri"><font size="5">
+				</font></span><font face="Calibri" size="5">Indoor – Arrangements</font></span></p>
+				<p class="MsoListParagraphCxSpLast" style="text-indent: -.25in; line-height: normal; text-autospace: none; margin-bottom: 2.8pt">
+				</p>
+				<p class="MsoListParagraphCxSpLast" style="text-indent: -.25in; line-height: normal; text-autospace: none; margin-bottom: 2.8pt">
+				<span style="color: black"><font face="Calibri" size="5">4.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri"><font size="5">
+				</font></span><font face="Calibri" size="5">Outdoor Night - Landmark</font></span></p>
+			</blockquote>
+		</blockquote>
+<p class="MsoListParagraphCxSpLast" style="text-indent: -.25in; line-height: normal; text-autospace: none; margin-bottom: 2.8pt">
+<font face="Calibri" size="5">&nbsp;&nbsp;&nbsp;&nbsp; The following general guidelines for capturing test photos are crucial to obtain reliable VIQET 
+results.&nbsp; Please ensure that you follow the guidelines below as closely as you can each time you take a photo for
+any of the four categories explained in the next section.&nbsp; </font></p>
+<blockquote>
+			<blockquote>
+				<p class="Default" style="text-indent: -.75in; margin-left: .75in; margin-right: 0in; margin-top: 0in; margin-bottom: 4.2pt">
+				<font face="Calibri" size="5">i.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri; font-size: 11.5pt"><font size="5">
+				</font></span><font face="Calibri"><font size="5">Ensure that you capture 
+				</font><span style="color: #FF9933"><font size="5">5</font></span><font size="5"> photos in 
+each of the test photo categories mentioned in the next section</font></font></p>
+				<p class="Default" style="text-indent: -.75in; margin-left: .75in; margin-right: 0in; margin-top: 0in; margin-bottom: 4.2pt">
+				<font face="Calibri" size="5">ii.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri; font-size: 11.5pt"><font size="5">
+				</font></span><font face="Calibri" size="5">Avoid direct light sources in all scenes 
+				</font></p>
+				<p class="Default" style="text-indent: -.75in; margin-left: .75in; margin-right: 0in; margin-top: 0in; margin-bottom: 4.2pt">
+				<font face="Calibri" size="5">iii.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri; font-size: 11.5pt"><font size="5">
+				</font></span><font face="Calibri" size="5">Avoid moving and animated objects such as cars and people 
+				</font></p>
+				<p class="Default" style="text-indent: -.75in; margin-left: .75in; margin-right: 0in; margin-top: 0in; margin-bottom: 4.2pt">
+				<font face="Calibri" size="5">iv.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri; font-size: 11.5pt"><font size="5">
+				</font></span><font face="Calibri" size="5">Avoid reflective surfaces such as glass or mirrors 
+				</font></p>
+				<p class="Default" style="text-indent: -.75in; margin-left: .75in; margin-right: 0in; margin-top: 0in; margin-bottom: 4.2pt">
+				<font face="Calibri" size="5">v.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri; font-size: 11.5pt"><font size="5">
+				</font></span><font face="Calibri" size="5">Avoid photographer shadow 
+				</font></p>
+			</blockquote>
+		</blockquote>
+<p class="MsoListParagraph" style="line-height: normal; text-autospace: none; margin-left: .25in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt" align="justify">
+<i>
+<font face="Calibri" size="5"><span style="color: #4472C4">Note: If you are using VIQET to compare different devices, please capture the same scene by the 
+devices. That means that you may have to move closer or further from the scene in order to capture the same photo.  Also, ensure that you do not show new objects in the photo as you are switching devices to capture the same scene.  VIQET App guides you in capturing (or choosing 
+previously captured) required test photos and analyzing them.</span></font></p>
+<span style="color: #4472C4">
+<p class="Default" style="margin-left: .25in; margin-right: 0in; margin-top: 0in; margin-bottom: 1.1pt">
+&nbsp;</p>
+		<blockquote>
+			<p class="MsoListParagraphCxSpMiddle" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+			<font face="Calibri" size="5"><span style="color: #4472C4">&nbsp;&nbsp;&nbsp;&nbsp; 
+			<img border="0" src="images/sample1.png" width="250" height="444"></span></font>
+			<img border="0" src="images/sample2.png" width="250" height="444"></p>
+		</blockquote>
+		<blockquote>
+			<p class="MsoListParagraphCxSpMiddle" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+			<font face="Calibri" size="5"><span style="color: #4472C4">&nbsp;&nbsp;&nbsp;&nbsp; 
+			<img border="0" src="images/sample3.png" width="250" height="444"></span></font>
+			<img border="0" src="images/sample4.png" width="250" height="444"></p>
+		</blockquote>
+<p class="MsoListParagraphCxSpLast" style="line-height: normal; text-autospace: none; margin-bottom: .0001pt">
+&nbsp;</p>
+<h2 style="text-indent: .5in"><font face="Calibri" size="5">
+&nbsp;<a name="_Toc437504683">Analyze Test Photos</a></font><br>
+<br>
+</h2>
+<p class="MsoListParagraphCxSpFirst" style="text-indent: -.25in; margin-left: .75in">
+<font face="Calibri" size="5">1.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri"><font size="5">
+</font></span><font face="Calibri" size="5">Launch the VIQET App. You are now on the home screen. To create a new test, click on the ‘Start New Test’ button and 
+enter </font></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent: -.25in; margin-left: .75in">
+<font face="Calibri" size="5">a test name. Use a name that will help you identify the test content.</font></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left: .75in">
+<font face="Calibri" size="5">
+<img border="0" src="images/test1.png" width="250" height="444"> </font>
+<img border="0" src="images/test2.png" width="250" height="444"></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent: -.25in; margin-left: .75in">
+<font face="Calibri" size="5">2.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri"><font size="5">
+</font></span><font face="Calibri" size="5">You are now on the Add Photos screen. Add required number of photos in each category by following instructions 
+on the </font></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent: -.25in; margin-left: .75in">
+<font face="Calibri" size="5">screen. You can choose an existing picture or capture a new photo from within the VIQET app.</font></p>
+<p class="MsoListParagraphCxSpMiddle" style="margin-left: .75in">
+<font face="Calibri" size="5"> 
+<img border="0" src="images/test3.png" width="250" height="444"> </font>
+<img border="0" src="images/test4.png" width="250" height="444"></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent: -.25in; margin-left: .75in">
+<font face="Calibri" size="5">3.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri"><font size="5">
+</font></span><font face="Calibri" size="5">The added photos are sent to the VIQET cloud service for analysis and results are displayed upon completion. You 
+can add </font></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent: -.25in; margin-left: .75in"></p>
+<p class="MsoListParagraphCxSpMiddle" style="text-indent: -.25in; margin-left: .75in">
+<font face="Calibri" size="5">all the required photos while the added images are being processed.</font></p>
+<p class="MsoListParagraphCxSpLast" style="margin-left: .75in">
+<font face="Calibri" size="5">
+<img border="0" src="images/test5.png" width="250" height="444">
+<img border="0" src="images/test6.png" width="250" height="444"></font></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent: -.25in; margin-left: .75in">
+<font face="Calibri" size="5">4.</font><span style="font-style: normal; font-variant: normal; font-weight: normal; font-family: Calibri"><font size="5">
+</font></span><font face="Calibri" size="5">After analyzing all the required photos in the set, the test results are displayed. From this screen, you can view the Overall 
+</font></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent: -.25in; margin-left: .75in">
+<font face="Calibri" size="5">results and detailed results for individual Categories and Images.</font></p>
+<p class="MsoListParagraphCxSpFirst" style="text-indent: -.25in; margin-left: .75in">
+			<font face="Calibri" size="5">
+			&nbsp;&nbsp;&nbsp;
+			<img border="0" src="images/result1.png" width="250" height="444">
+			<img border="0" src="images/result2.png" width="250" height="444">
+			<img border="0" src="images/result3.png" width="250" height="444"></font></p>
+		<p class="MsoListParagraphCxSpLast" style="margin-left: .75in">
+<font face="Calibri" size="5"><i><span style="color: #4472C4">Note: You can 
+choose to view the Sharpness map and an RGB histogram for each photo</span></i></font></p>
+		<p class="MsoListParagraphCxSpFirst" style="margin-left: .75in">
+<font face="Calibri" size="5">
+<img border="0" src="images/result4.png" width="250" height="444">
+<img border="0" src="images/result5.png" width="250" height="444"> </font>
+<img border="0" src="images/result6.png" width="250" height="444"></p></td>
+	</tr>
+	<tr>
+		<td>
+<h1 style="text-indent: -.25in; margin-left: .25in"><a name="_Toc437504684"><b>
+<font face="Calibri" size="5">4.</font></b><span style="font-style: normal; font-variant: normal; font-family: Calibri; font-weight: 700"><font size="5">
+</font></span><b><font face="Calibri" size="5">Support</font></b></a><br>
+</h1>
+<p class="MsoListParagraph"><font face="Calibri" size="5">Please submit feature 
+requests, tool issues and bugs at
+<a style="color: #FF9933; text-decoration: underline; text-underline: single" href="https://github.com/VIQET/VIQET-Desktop/issues">
+https://github.com/VIQET/VIQET-Desktop/issues</a><font color="#FF9933"> </font> </font></p>
+		</td>
+	</tr>
+	<tr>
+		<td>
+<h1 style="text-indent: -.25in; margin-left: .25in"><a name="_Toc437504685"><b>
+<font face="Calibri" size="5">5.</font></b><span style="font-style: normal; font-variant: normal; font-family: Calibri; font-weight: 700"><font size="5">
+</font></span><span class="Heading2Char">
+<span style="line-height: 107%; font-weight: 700"><font face="Calibri" size="5">
+Index</font></span></span></a></h1>
+		<blockquote>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<span class="Heading2Char"><span style="font-weight: 700">
+			<font face="Calibri" size="5" color="#000000">1. R</font></span></span><font face="Calibri" size="5" color="#000000"><b>esolution:</b> 
+refers to the total number of little squares (pixels) that make up an image. The higher the resolution, the higher the number of pixels.
+			</font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font face="Calibri" size="5" color="#000000">2<b>. Saturation: </b>
+			<span style="border: 1.0pt none windowtext; padding: 0in">refers to how vivid and intense a color is. An image with poor color saturation will look washed out or faded.  
+When a color's saturation level is reduced to 0, it becomes a shade of gray.</span></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font face="Calibri" size="5">3. </font><b>
+			<font face="Calibri" size="5"><span>Color 
+Warmth: </span></font></b>
+			<span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in">
+			<font size="5">refers to the tint of the overall image. Images with a bluish 
+tint are considered to have cool colors. Images with an orange-reddish tint are considered to have warm colors.</font></span></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font size="5">
+			<span style="font-family: Calibri">4. </span></font><b>
+			<span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in">
+			<font size="5">Dynamic Range</font></span></b><span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in"><font size="5">:</font></span><span style="font-family: Calibri; background: white"><font size="5"> 
+			is the range between the lightest and darkest regions in an image 
+			while maintaining details of an image in</font></span><font size="5"><span style="font-family: Calibri"> both the lightest and darkest 
+spots (represented in shades of grey).</span></font></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font size="5">
+			<span style="font-family: Calibri">5. </span></font><b>
+			<span style="font-family: Calibri; background: white">
+			<font size="5">Illumination:</font></span></b><span style="font-family: Calibri; background: white"><font size="5"> 
+refers to how well-lit an image is. An image is considered well-lit if it is 
+bright and has a sufficient amount of </font></span><font size="5">
+			<span style="font-family: Calibri">detail.&nbsp; Its values 
+ranges from 0 - 255.</span></font></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font size="5">
+			<span style="font-family: Calibri">6. </span></font><b>
+			<span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in">
+			<font size="5">Multi-scale 
+edge acutance:</font></span></b><span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in"><font size="5"> 
+refers to how sharp the outline of objects in an image are and how many edges 
+were detected in the scene. The sharper the image, the higher the multi-scale edge 
+acutance feature.</font></span></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font size="5">
+			<span style="font-family: Calibri">7. </span></font><b>
+			<span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in">
+			<font size="5">Multi-scale 
+texture acutance</font></span></b><span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in"><font size="5">: 
+refers to the level of activity and detail in the scene. The higher the level of 
+detail in the scene the higher this feature value is.</font></span></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font size="5">
+			<span style="font-family: Calibri">8. </span></font><b>
+			<span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in">
+			<font size="5">Noise 
+signature index:</font></span></b><span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in"><font size="5"> 
+refers to how noisy or grainy an image is. This feature value ranges from 0 to 
+589. The higher the index, the grainier an image is.</font></span></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font size="5">
+			<span style="font-family: Calibri">9. </span></font><b>
+			<span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in; background: white">
+			<font size="5">% 
+Over-exposed:</font></span></b><span style="font-family: Calibri; border: 1.0pt none windowtext; padding: 0in; background: white"><font size="5"> 
+refers to the percentage of the image area that is covered in white. This 
+feature ranges from 0 to 100. A </font></span><font size="5">
+			<span style="font-family: Calibri">higher percentage value 
+indicates a larger area of an image is over-exposed.</span></font></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font size="5">
+			<span style="font-family: Calibri">10. </span></font>
+			<font face="Calibri" size="5"><b><span style="background: white">% Under-exposed</span></b><span style="background: white">: refers to the 
+percentage of the image area that is covered in black. This feature ranges from 
+0 to 100. A </span></font><font size="5"><span style="font-family: Calibri">higher percentage value 
+indicates a larger area of an image is under-exposed.</span></font></font></h1>
+			<h1 style="text-indent: -.25in; margin-left: .25in">
+			<font color="#000000"><font size="5">
+			<span style="font-family: Calibri">11. </span></font>
+			<font face="Calibri" size="5"><b><span style="background: white">Lux</span></b><span style="background: white">: refers to a measure of light 
+intensity that hits or passes through a surface, as perceived by the human eye.</span></font></font><br>
+			</h1>
+		</blockquote>
+		</td>
+	</tr>
+	</table>
+
+</body>
+
+</html>

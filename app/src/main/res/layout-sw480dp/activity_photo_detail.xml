@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="nestedWeights"
+    android:weightSum="8"
+    android:background="@color/background" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="4"
+        android:weightSum="3">
+        <ImageView
+            android:id="@+id/img_original"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/img_viz1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+        <ImageView
+            android:id="@+id/img_viz2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:layout_margin="10dp"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        android:background="@color/menu_background"
+        android:padding="10dp"
+        android:weightSum="5">
+
+        <TextView
+            android:id="@+id/label_photoDetailName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="@string/details"
+            android:textStyle="bold"
+            android:layout_weight="3"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/label_photoDetailValue"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center_vertical|right"
+            android:text="@string/placeholderValue"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/photoDetailsListView"
+        android:background="@color/sub_menu_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.5"/>
+
+</LinearLayout>

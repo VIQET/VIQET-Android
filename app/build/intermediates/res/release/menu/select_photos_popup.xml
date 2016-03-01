@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item  
+        android:id="@+id/deletePhoto"  
+        android:title="@string/deletePhoto"/>
+    <item  
+        android:id="@+id/takeNewPhoto"  
+        android:title="@string/takeNewPhoto"/>
+    <item  
+        android:id="@+id/viewPhoto"  
+        android:title="@string/viewPhoto"/>  
+    <item  
+        android:id="@+id/viewPhotoDetails"  
+        android:title="@string/viewPhotoDetails"/>
+</menu>
+<!-- From: file:/C:/Users/rkalidin/Documents/GitHub/VIQETAndroid/app/src/main/res/menu/select_photos_popup.xml -->

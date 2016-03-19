@@ -13,6 +13,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import org.vqeg.viqet.R;
 import org.vqeg.viqet.cloud.Json.MethodologyResponse;
 import org.vqeg.viqet.cloud.Json.PhotoResponse;
 import org.vqeg.viqet.cloud.Json.SASResponse;
@@ -209,7 +210,7 @@ public class CloudCommunicator
     {
         //Get server name
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
-        String serverDefaultValue = context.getResources().getString(org.vqeg.viqet.R.string.productionServerValue);
+        String serverDefaultValue = context.getResources().getString(R.string.productionServerValue);
         return sharedPref.getString("serverType", serverDefaultValue);
     }
 

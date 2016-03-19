@@ -35,7 +35,7 @@
     </string>
     <string name="license3">Declining will disable the ‘Upload Test Photos’ and will not allow the app to evaluate photos.
     </string>
-    <string name="license4">You can change this from the ‘Settings’x in the main menu.
+    <string name="license4">You can change this from the ‘Settings’ in the main menu.
     </string>
     <string name="licenseAcceptance">licence</string>
 
@@ -63,7 +63,7 @@
     <string name="productionServerName">Production Server</string>
     <string name="productionServerValue">http://viqetservice.cloudapp.net</string>
     <string name="stagingServerName">Staging Server</string>
-    <string name="stagingServerValue">http://a8714f64e17a4d13ad719a472defbfd2.cloudapp.net</string>
+    <string name="stagingServerValue">http://5a5693d3473f4200b6c7504635a37eb1.cloudapp.net/</string>
 
     <!-- Result Browser -->
     <string name="resultBrowserTitle">ResultBrowser</string>

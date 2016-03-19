@@ -76,7 +76,8 @@ public class VersionUpdateTask extends AsyncTask<Void,Void,Void>{
             newVersion.setVersionFromString(versionResponse.getVersionString());
             RemoteInfo remoteInfo =  RemoteInfoProvider.getRemoteInfo();
             if(remoteInfo!= null){
-                if(!(newVersion.getAlgoVersion() == remoteInfo.getVersion().getAlgoVersion()) || !(newVersion.getMethodologyVersion() == remoteInfo.getVersion().getMethodologyVersion()))
+                if(!(newVersion.getAlgoVersion() == remoteInfo.getVersion().getAlgoVersion()) ||
+                        !(newVersion.getMethodologyVersion() == remoteInfo.getVersion().getMethodologyVersion()) || !(newVersion.getReleaseVersion() == remoteInfo.getVersion().getReleaseVersion()))
                 {
                     remoteInfo.setVersion(newVersion);
                     versionChange =true;

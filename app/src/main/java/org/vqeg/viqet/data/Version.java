@@ -35,20 +35,28 @@ public class Version implements Serializable
 		return this.algoVersion;
 	}
 
+	private int releaseVersion;
+	public int getReleaseVersion()
+	{
+		return this.releaseVersion;
+	}
+
     public void setVersionFromString(String versionString)
 	{
 		if(versionString != null)
 		{
 
 			String[] versionParts = versionString.split("_");
-			if(versionParts.length < 2)
+			if(versionParts.length < 3)
 			{
 				Log.e(TAG, "returned version is invalid");
 			}
 			else
 			{
-				this.methodologyVersion = Integer.parseInt(versionParts[0]);
-				this.algoVersion = Integer.parseInt(versionParts[1]);
+				Log.i("vn",""+versionString);
+				this.releaseVersion=Integer.parseInt(versionParts[0]);
+				this.methodologyVersion = Integer.parseInt(versionParts[1]);
+				this.algoVersion = Integer.parseInt(versionParts[2]);
 			}
 		}
 	}

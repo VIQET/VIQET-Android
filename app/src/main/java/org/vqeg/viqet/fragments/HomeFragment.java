@@ -70,11 +70,11 @@ public class HomeFragment extends Fragment {
             try
             {
                 String versionFromManifest = BuildConfig.VERSION_NAME;//getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-                String[] versionParts = versionFromManifest.split("\\.");
-                String releaseVersion = versionParts[0];
-                String androidAppVersion = versionParts[1];
+//                String[] versionParts = versionFromManifest.split("\\.");
+//                String releaseVersion = versionParts[0];
+                String androidAppVersion = versionFromManifest;
                 Version version = remoteInfo.getVersion();
-                tv_version.setText("Preview Release "+releaseVersion + "." + version.getMethodologyVersion() + "." + version.getAlgoVersion() + "." + androidAppVersion);
+                tv_version.setText("Version "+version.getReleaseVersion() + "." + version.getMethodologyVersion() + "." + version.getAlgoVersion() + "." + androidAppVersion);
             } catch (Exception e)
             {
                 tv_version.setText("Version cannot be found");

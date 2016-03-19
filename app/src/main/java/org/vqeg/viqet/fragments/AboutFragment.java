@@ -94,11 +94,11 @@ public class AboutFragment extends Fragment {
         if(remoteInfo != null) {
             try {
                 String versionFromManifest = BuildConfig.VERSION_NAME;//getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-                String[] versionParts = versionFromManifest.split("\\.");
-                String releaseVersion = versionParts[0];
-                String androidAppVersion = versionParts[1];
+//                String[] versionParts = versionFromManifest.split("\\.");
+//                String releaseVersion = versionParts[0];
+                String androidAppVersion = versionFromManifest;
                 Version version = remoteInfo.getVersion();
-                tv_para3.setText("Version: Preview Release " + releaseVersion + "." + version.getMethodologyVersion() + "." + version.getAlgoVersion() + "." + androidAppVersion);
+                tv_para3.setText("Version: " + version.getReleaseVersion() + "." + version.getMethodologyVersion() + "." + version.getAlgoVersion() + "." + androidAppVersion);
             } catch (Exception e) {
                 tv_para3.setText("Version cannot be found");
             }

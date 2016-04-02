@@ -1,5 +1,5 @@
 /*
- * Copyright © 2015 Intel Corporation
+ * Copyright Â© 2015 Intel Corporation
  * This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
  *  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
  *  Contributors:
@@ -49,6 +49,7 @@ import org.vqeg.viqet.fragments.HelpFragment;
 import org.vqeg.viqet.fragments.HomeFragment;
 import org.vqeg.viqet.fragments.ResultsListFragment;
 import org.vqeg.viqet.fragments.SettingsFragment;
+import org.vqeg.viqet.fragments.SingleResultsListFragment;
 import org.vqeg.viqet.services.PhotoInspectorService;
 import org.vqeg.viqet.utilities.SystemInfo;
 
@@ -105,7 +106,7 @@ public class MainActivity extends ActionBarActivity {
 
         mTitle = mDrawerTitle = "VIQET";
         mOptionsTitles = getResources().getStringArray(R.array.options_array);
-        mImageResources = new int[]{R.drawable.home,R.drawable.result,R.drawable.help,R.drawable.about,R.drawable.setting};
+        mImageResources = new int[]{R.drawable.home,R.drawable.camera_results_icon,R.drawable.photo_quality_results,R.drawable.help,R.drawable.about,R.drawable.setting};
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
@@ -161,7 +162,6 @@ public class MainActivity extends ActionBarActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), getString(R.string.noInternetError), Toast.LENGTH_LONG).show();
                 }
-
             }
         });
 
@@ -355,16 +355,21 @@ public class MainActivity extends ActionBarActivity {
                     fragmentManager1.beginTransaction().replace(R.id.content_frame, fragment, "Results List Fragment").commit();
                     break;
             case 2:
+                fragment = new SingleResultsListFragment();
+                FragmentManager fragmentManager5 = getFragmentManager();
+                fragmentManager5.beginTransaction().replace(R.id.content_frame, fragment, "Results Single List Fragment").commit();
+                break;
+            case 3:
                 fragment = new HelpFragment();
                 FragmentManager fragmentManager2 = getFragmentManager();
                 fragmentManager2.beginTransaction().replace(R.id.content_frame, fragment, "Help Fragment").commit();
                 break;
-            case 3:
+            case 4:
                 fragment = new AboutFragment();
                 FragmentManager fragmentManager3 = getFragmentManager();
                 fragmentManager3.beginTransaction().replace(R.id.content_frame, fragment, "About Fragment").commit();
                 break;
-            case 4:
+            case 5:
                 fragment = new SettingsFragment();
                 FragmentManager fragmentManager4 = getFragmentManager();
                 fragmentManager4.beginTransaction().replace(R.id.content_frame, fragment, "Settings Fragment").commit();

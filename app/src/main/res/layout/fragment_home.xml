@@ -16,41 +16,93 @@
     android:weightSum="1"
     android:id="@+id/home_background_layout">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.9">
+        android:layout_weight="0.9"
+        android:weightSum="1"
+        android:orientation="vertical">
 
-        <ImageButton
-            android:id="@+id/start_button"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:background="@android:color/transparent"
-            android:src="@drawable/play"
-            android:scaleType="fitXY"
-            android:padding="@dimen/start_button_padding"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:textSize="@dimen/button_text_size"
-            android:textColor="@android:color/white"
-            android:text="@string/btn_start_label"
-            android:layout_below="@id/start_button"/>
-
-    </RelativeLayout>
-
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="0.1"
-            android:background="@android:color/transparent"
-            android:gravity="center_horizontal|center_vertical"
-            android:textColor="@color/tv_version_background"
-            android:id="@+id/tv_version"/>
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/start_single_test_button"
+                android:layout_width="150dp"
+                android:layout_height="135dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/photo_quality_button"
+                android:scaleType="fitXY"
+                android:padding="@dimen/start_button_padding"
+                android:textSize="@dimen/button_text_size"
+                android:textColor="@android:color/white"
+                android:contentDescription="@string/start_single_label"/>
+
+            <TextView
+                android:id="@+id/tv_single_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/button_text_size"
+                android:textColor="@android:color/white"
+                android:text="@string/start_single_label"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:layout_margin="10dp"
+                android:text="@string/text_start_single_test_button"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/start_button"
+                android:layout_width="150dp"
+                android:layout_height="135dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/camera_quality_button"
+                android:scaleType="fitXY"
+                android:padding="@dimen/start_button_padding"
+                android:contentDescription="@string/start_camera_label"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/button_text_size"
+                android:textColor="@android:color/white"
+                android:text="@string/start_camera_label"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_margin="10dp"
+                android:textColor="@android:color/white"
+                android:text="@string/text_start_label"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="0.1"
+       android:background="@android:color/transparent"
+       android:gravity="center_horizontal|center_vertical"
+       android:textColor="@color/tv_version_background"
+       android:id="@+id/tv_version"/>
 </LinearLayout>
 

@@ -60,6 +60,7 @@ public class ResultsListFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(org.vqeg.viqet.R.layout.fragment_result, container, false);
+        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Camera Quality Results");
         new ResultsFetchTask(getActivity(),rootView).execute();
 
         return rootView;
@@ -75,8 +76,6 @@ public class ResultsListFragment extends Fragment {
         // Create an adapter using the item layout and resultBrowser resultsList
         // and assign it to ListView
         ListAdapter adapter = new CustomResultListAdapter(getActivity(), org.vqeg.viqet.R.layout.list_results_item, resultBrowser.getResults(),resultMOSScoreList);
-
-        ((MainActivity)getActivity()).getSupportActionBar().setTitle("Results");
 
         results = (ListView) rootView.findViewById(org.vqeg.viqet.R.id.list_of_results);
         results.setAdapter(adapter);

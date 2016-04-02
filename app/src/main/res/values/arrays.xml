@@ -31,7 +31,8 @@
 
     <string-array name="options_array">
         <item name="Newtest">Home</item>
-        <item name="Results">Results</item>
+        <item name="Results">Camera Quality Results</item>
+        <item name="SingleResults">Photo Quality Results</item>
         <item name="Help">Help</item>
         <item name="About">About</item>
         <item name="Settings">Settings</item>

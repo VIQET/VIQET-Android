@@ -1,11 +1,3 @@
-/*
- * Copyright © 2015 Intel Corporation
- * This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
- *  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
- *  Contributors:
- *     Intel Corporation - initial API and implementation and/or initial documentation
- */
-
 package org.vqeg.viqet.activities;
 
 import android.content.Context;
@@ -24,29 +16,31 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import org.vqeg.viqet.adapters.ImageSliderPhotoDetailAdapter;
-import org.vqeg.viqet.data.Photo;
 import org.vqeg.viqet.data.PhotoDetail;
 import org.vqeg.viqet.data.Visualization;
 import org.vqeg.viqet.logic.PhotoDetails;
+import org.vqeg.viqet.singlephotodata.SinglePhoto;
 import org.vqeg.viqet.utilities.PhotoDecoder;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PhotoDetailActivity extends ActionBarActivity {
+/**
+ * Created by rkalidin on 3/26/2016.
+ */
+public class SinglePhotoDetailActivity extends ActionBarActivity {
 
     private static final String PHOTO_ID = "PHOTO_ID";
     private static final String RESULT_ID = "RESULT_ID";
-    private static final String STEP_ID = "STEP_ID";
     private static final String FLAG = "FLAG";
     private PhotoDetails photoDetails;
     private ViewPager viewPager;
     private ImageView img_scroll_helper;
-    private int resultIndex, stepIndex;
+    private int resultIndex;
     private boolean flag;
 
-    private Photo photo;
+    private SinglePhoto photo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,16 +53,15 @@ public class PhotoDetailActivity extends ActionBarActivity {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
 
-        photo = (Photo)getIntent().getSerializableExtra(PHOTO_ID);
+        photo = (SinglePhoto)getIntent().getSerializableExtra(PHOTO_ID);
         resultIndex= getIntent().getIntExtra(RESULT_ID,0);
-        stepIndex= getIntent().getIntExtra(STEP_ID,0);
 
         initialize();
     }
 
     private void initialize(){
         this.photoDetails = new PhotoDetails(photo);
-        getSupportActionBar().setTitle(""+photoDetails.getPhoto().getFilename());
+        getSupportActionBar().setTitle(""+photoDetails.getSinglePhoto().getFilename());
 
         ArrayList<String> filePaths= new ArrayList<>();
         filePaths.add(photo.getFilePath());
@@ -103,7 +96,7 @@ public class PhotoDetailActivity extends ActionBarActivity {
         photoDetailValueHeader.setText(org.vqeg.viqet.R.string.photoValue);
 
         //Add Photo Details Values
-        List<PhotoDetail> photoDetailList = new ArrayList<PhotoDetail>(this.photoDetails.getPhoto().getPhotoDetailMap().values());
+        List<PhotoDetail> photoDetailList = new ArrayList<PhotoDetail>(this.photoDetails.getSinglePhoto().getPhotoDetailMap().values());
         ListAdapter photoDetailAdapter = new PhotoDetailAdapter(getApplicationContext(), org.vqeg.viqet.R.layout.photo_details_feature_item, photoDetailList);
         ListView photoDetailsListView = (ListView) findViewById(org.vqeg.viqet.R.id.photoDetailsListView);
         photoDetailsListView.setAdapter(photoDetailAdapter);
@@ -113,7 +106,7 @@ public class PhotoDetailActivity extends ActionBarActivity {
 
         img_scroll_helper = (ImageView) findViewById(org.vqeg.viqet.R.id.scroll_helper);
         viewPager = (ViewPager) findViewById(org.vqeg.viqet.R.id.pager_photo_detail);
-        ImageSliderPhotoDetailAdapter adapter = new ImageSliderPhotoDetailAdapter(PhotoDetailActivity.this,filePaths);
+        ImageSliderPhotoDetailAdapter adapter = new ImageSliderPhotoDetailAdapter(SinglePhotoDetailActivity.this,filePaths);
         viewPager.setAdapter(adapter);
 
         // displaying selected image first

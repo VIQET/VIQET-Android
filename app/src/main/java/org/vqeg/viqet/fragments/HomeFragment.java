@@ -27,6 +27,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import org.vqeg.viqet.BuildConfig;
+import org.vqeg.viqet.R;
 import org.vqeg.viqet.activities.MainActivity;
 import org.vqeg.viqet.data.RemoteInfo;
 import org.vqeg.viqet.data.RemoteInfoProvider;
@@ -39,7 +40,7 @@ import org.vqeg.viqet.logic.ResultBrowser;
 public class HomeFragment extends Fragment {
 
     private ResultBrowser resultBrowser;
-    private ImageButton btn_start;
+    private ImageButton btn_start, btn_single_photo_start;
     private TextView tv_version;
 
     public HomeFragment() {   }
@@ -64,15 +65,23 @@ public class HomeFragment extends Fragment {
                 showCustomDialog();
             }
         });
+        btn_single_photo_start =(ImageButton) rootView.findViewById(R.id.start_single_test_button);
+        btn_single_photo_start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new UploadSinglePhotoFragment();
+                Bundle args = new Bundle();
+                args.putInt("RESULT_INDEX",-1);
+                fragment.setArguments(args);
+                getFragmentManager().beginTransaction().replace(org.vqeg.viqet.R.id.content_frame, fragment).commit();
+            }
+        });
         tv_version =(TextView) rootView.findViewById(org.vqeg.viqet.R.id.tv_version);
         RemoteInfo remoteInfo = RemoteInfoProvider.getCopyRemoteInfo();
         if(remoteInfo != null) {
             try
             {
-                String versionFromManifest = BuildConfig.VERSION_NAME;//getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
-//                String[] versionParts = versionFromManifest.split("\\.");
-//                String releaseVersion = versionParts[0];
-                String androidAppVersion = versionFromManifest;
+                String androidAppVersion = BuildConfig.VERSION_NAME;
                 Version version = remoteInfo.getVersion();
                 tv_version.setText("Version "+version.getReleaseVersion() + "." + version.getMethodologyVersion() + "." + version.getAlgoVersion() + "." + androidAppVersion);
             } catch (Exception e)

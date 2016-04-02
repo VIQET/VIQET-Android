@@ -10,12 +10,14 @@ package org.vqeg.viqet.logic;
 
 import org.vqeg.viqet.data.Photo;
 import org.vqeg.viqet.data.Visualization;
+import org.vqeg.viqet.singlephotodata.SinglePhoto;
 
 import java.util.List;
 
 public class PhotoDetails 
 {
 	private Photo photo;
+	private SinglePhoto singlePhoto;
 	private int visualizationCount;
 	
 	public PhotoDetails(Photo photo)
@@ -29,8 +31,23 @@ public class PhotoDetails
 			this.visualizationCount = visualizationList.size();
 		}
 	}
+	public PhotoDetails(SinglePhoto singlePhoto)
+	{
+		this.singlePhoto = singlePhoto;
+		this.visualizationCount = 0;
+
+		List<Visualization> visualizationList = singlePhoto.getVisualizationList();
+		if(visualizationList != null)
+		{
+			this.visualizationCount = visualizationList.size();
+		}
+	}
 	public Photo getPhoto()
 	{
 		return this.photo;
+	}
+	public SinglePhoto getSinglePhoto()
+	{
+		return this.singlePhoto;
 	}
 }

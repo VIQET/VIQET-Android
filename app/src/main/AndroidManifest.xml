@@ -64,6 +64,10 @@
             android:theme="@style/Theme.AppCompat" >
         </activity>
         <activity
+            android:name="org.vqeg.viqet.activities.SinglePhotoDetailActivity"
+            android:label="SinglePhotoDetailActivity"
+            android:theme="@style/Theme.AppCompat" />
+        <activity
             android:name="org.vqeg.viqet.activities.ResultDetailActivity"
             android:label="@string/title_activity_result_detail"
             android:theme="@style/Theme.AppCompat" >

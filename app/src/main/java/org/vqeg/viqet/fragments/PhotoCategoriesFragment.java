@@ -42,7 +42,6 @@ import org.vqeg.viqet.activities.ResultDetailActivity;
 import org.vqeg.viqet.adapters.ImageAdapter;
 import org.vqeg.viqet.data.Category;
 import org.vqeg.viqet.data.Photo;
-import org.vqeg.viqet.data.ResultStore;
 import org.vqeg.viqet.data.Version;
 import org.vqeg.viqet.logic.ResultBrowser;
 import org.vqeg.viqet.logic.SelectPhotos;
@@ -76,7 +75,6 @@ public class PhotoCategoriesFragment extends Fragment {
         selectPhotos = new SelectPhotos(resultIndex);
         categoryList = selectPhotos.getCategories();
         photoList= categoryList.get(stepIndex).getPhotoList();
-        MainActivity.lastClicked=5;
         initUI(rootView);
         return rootView;
     }
@@ -399,15 +397,15 @@ public class PhotoCategoriesFragment extends Fragment {
                 if (selectPhotos.getResultIndex() == resultIndex) {
                     lv_photos.invalidateViews();
 
-                    //Check if the cloud version has changed. If so, initiate re-processing
-                    Photo photo = ResultStore.GetResultStore().getResults().get(resultIndex).getPhotoList().get(photoIndex);
-                    if (photo.getState() == Photo.State.ANALYSIS_COMPLETE) {
-                        boolean majorVersionChange = checkForVersionChangeAndReprocess(photo.getCloudVersion());
-                        if (!majorVersionChange) {
-                            photo.setState(Photo.State.ANALYSIS_FAILED);
-                            ResultStore.GetResultStore().persist();
-                        }
-                    }
+//                    //Check if the cloud version has changed. If so, initiate re-processing
+//                    Photo photo = ResultStore.GetResultStore().getResults().get(resultIndex).getPhotoList().get(photoIndex);
+//                    if (photo.getState() == Photo.State.ANALYSIS_COMPLETE) {
+//                        boolean majorVersionChange = checkForVersionChangeAndReprocess(photo.getCloudVersion());
+//                        if (!majorVersionChange) {
+//                            photo.setState(Photo.State.ANALYSIS_FAILED);
+//                            ResultStore.GetResultStore().persist();
+//                        }
+//                    }
                 }
             }
         }

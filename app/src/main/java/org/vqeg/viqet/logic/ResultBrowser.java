@@ -41,9 +41,7 @@ public class ResultBrowser
 		//TODO: Check if the result name has been used before
 		//Create a new result and initialize it
 		Result result = new Result(name, RemoteInfoProvider.getRemoteInfo());
-	
 		ResultStore.GetResultStore().addResult(result);
-		
 		return result;
 	}
 }

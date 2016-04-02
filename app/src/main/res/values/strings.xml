@@ -63,7 +63,7 @@
     <string name="productionServerName">Production Server</string>
     <string name="productionServerValue">http://viqetservice.cloudapp.net</string>
     <string name="stagingServerName">Staging Server</string>
-    <string name="stagingServerValue">http://5a5693d3473f4200b6c7504635a37eb1.cloudapp.net/</string>
+    <string name="stagingServerValue">http://b0fa3d5234a042ea9e63181f694314ed.cloudapp.net/</string>
 
     <!-- Result Browser -->
     <string name="resultBrowserTitle">ResultBrowser</string>
@@ -158,7 +158,10 @@
     <string name="about_fragment_third_para">Version: </string>
 
     <!-- HomeFragment -->
-    <string name="btn_start_label">Start New Test</string>
+    <string name="start_camera_label">Camera Quality</string>
+    <string name="start_single_label">Photo Quality</string>
+    <string name="text_start_label">Evaluate quality of a camera based on 20 photos</string>
+    <string name="text_start_single_test_button">Evaluate quality of a single photo</string>
     <string name="btn_tips_label">Tips</string>
     <string name="version_change_title">Version Updated</string>
     <string name="text_dialog_version_change">VIQET MOS estimation service has been updated. The current version information is displayed in the Home screen. Results with the new version are not comparable to the previous versions.</string>
@@ -190,4 +193,19 @@
     <string name="dialog_message_select_photo">Selecting Photo</string>
     <!--SettingsFragment-->
     <string name="text_switch">Upload test photos for quality evaluation</string>
+
+    <!-- UploadSinglePhotoFragment-->
+    <string name="upload_photo">Upload Photo</string>
+    <string name="evaluate_photo">Evaluate Photo</string>
+    <string name="select_upload_method">Select Upload Method</string>
+    <string name="select_gallery">Gallery</string>
+    <string name="select_camera">Camera</string>
+    <string name="radio_outdoor_landscape">Outdoor Day</string>
+    <string name="radio_indoor">Indoor</string>
+    <string name="radio_outdoor_night">Outdoor Night</string>
+    <string name="radio_label">Select Category</string>
+    <string name="rating_label">Rating</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

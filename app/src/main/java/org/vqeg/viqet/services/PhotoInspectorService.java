@@ -12,10 +12,11 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+
 import org.vqeg.viqet.alarms.PhotoInspectorAlarm;
 import org.vqeg.viqet.cloud.CloudCommunicator;
-import org.vqeg.viqet.cloud.Json.ExamplePhotoResponse;
 import org.vqeg.viqet.cloud.FileTransfer;
+import org.vqeg.viqet.cloud.Json.ExamplePhotoResponse;
 import org.vqeg.viqet.cloud.Json.InputCategoryResponse;
 import org.vqeg.viqet.cloud.Json.MethodologyResponse;
 import org.vqeg.viqet.cloud.Json.OutputCategoryResponse;
@@ -36,6 +37,9 @@ import org.vqeg.viqet.data.ResultStore;
 import org.vqeg.viqet.data.SharedAccessSignature;
 import org.vqeg.viqet.data.Version;
 import org.vqeg.viqet.data.Visualization;
+import org.vqeg.viqet.singlephotodata.SinglePhoto;
+import org.vqeg.viqet.singlephotodata.SinglePhotoResultStore;
+import org.vqeg.viqet.singlephotodata.SingleResult;
 import org.vqeg.viqet.utilities.FileHelper;
 
 import java.util.ArrayList;
@@ -46,7 +50,9 @@ public class PhotoInspectorService extends IntentService
 {
 	private static final String TAG = "PhotoInspectorService";
     public static final String BROADCAST_PHOTO_STATUS_CHANGE = "org.vqeg.viqet.broadcast.photoUpdated";
+    public static final String BROADCAST_SINGLE_PHOTO_STATUS_CHANGE = "org.vqeg.viqet.broadcast.photoUpdated";
     public static final String BROADCAST_METHODOLOGY_FETCHED = "org.vqeg.viqet.broadcast.methodologyFetched";
+    public static final String INSPECT_SINGLE_PHOTO_ACTION = "INSPECT_SINGLE_PHOTO_ACTION";
     public static final String INSPECT_PHOTO_ACTION = "INSPECT_PHOTO_ACTION";
 	public static final String RE_INSPECT_PHOTO_ACTION = "RE_INSPECT_PHOTO_ACTION";
 	public static final String INSPECT_ALL_PENDING_PHOTOS_ACTION = "INSPECT_ALL_PENDING_PHOTOS_ACTION";
@@ -89,6 +95,10 @@ public class PhotoInspectorService extends IntentService
                 break;
             case FETCH_VERSION_MODEL_CHANGED_ACTION:
                 fetchVersionWhenModelChanged();
+                break;
+            case INSPECT_SINGLE_PHOTO_ACTION:
+                resultIndex = intent.getIntExtra(RESULT_INDEX, -1);
+                inspectSinglePhoto(resultIndex);
                 break;
         }
 	}
@@ -218,8 +228,135 @@ public class PhotoInspectorService extends IntentService
 			}
 		}		
 	}
-	
-	private void inspectAllPendingPhotos()
+
+    private void inspectSinglePhoto(int resultIndex)
+    {
+        if( resultIndex >= 0)
+        {
+            SinglePhoto photo = SinglePhotoResultStore.GetResultStore().getResults().get(resultIndex).getPhoto();
+
+            //If the photo is not uploaded, upload the photo
+            if((photo.getState() == SinglePhoto.State.UNANALYZED) || (photo.getState() == SinglePhoto.State.UPLOAD_FAILED))
+            {
+                photo.setState(SinglePhoto.State.UPLOAD_STARTED);
+                //todo
+                broadcastSinglePhotoStatusChange(resultIndex, this.getApplicationContext());
+
+                //Fetch SAS URL from SERVER
+                SharedAccessSignature sharedAccessSignature = FetchSAS();
+                if(sharedAccessSignature != null)
+                {
+                    photo.setContainerName(sharedAccessSignature.getContainerName());
+                    photo.setBlobName(sharedAccessSignature.getBlobName());
+
+                    if(FileTransfer.UploadFile(photo.getFilePath(), sharedAccessSignature.getSasURL(), this.getApplicationContext()))
+                    {
+                        Log.i(this.getClass().getSimpleName(), "Upload Complete - Photo No " );
+                        photo.setState(SinglePhoto.State.UPLOAD_COMPLETE);
+                    }
+                    else
+                    {
+                        Log.i(this.getClass().getSimpleName(), "Upload Failed (While uploading to blob storage) - Photo No " );
+                        photo.setState(SinglePhoto.State.UPLOAD_FAILED);
+                    }
+                }
+                else
+                {
+                    Log.i(this.getClass().getSimpleName(), "Upload Failed (No SAS url returned by server) - Photo No " );
+                    photo.setState(SinglePhoto.State.UPLOAD_FAILED);
+                }
+
+                SinglePhotoResultStore.GetResultStore().persist();
+                broadcastSinglePhotoStatusChange(resultIndex, this.getApplicationContext());
+            }
+
+
+            //If the photo has been uploaded, ask the server to analyze the photo
+            if((photo.getState() == SinglePhoto.State.UPLOAD_COMPLETE)|| (photo.getState() == SinglePhoto.State.ANALYSIS_FAILED) || (photo.getState() == SinglePhoto.State.ANALYSIS_INPROGRESS))
+            {
+                photo.setState(SinglePhoto.State.ANALYSIS_STARTED);
+                broadcastSinglePhotoStatusChange(resultIndex, this.getApplicationContext());
+
+                PhotoResponse photoResponse = CloudCommunicator.FetchPhotoDetails(photo.getBlobName(), photo.getContainerName(), photo.getInputCategory(), this.getApplicationContext());
+                if(photoResponse != null)
+                {
+                    if(photoResponse.getErrorCode() == PhotoResponse.ErrorCodes.Success)
+                    {
+                        Version cloudVersion = new Version();
+                        cloudVersion.setVersionFromString(photoResponse.getVersionString());
+                        photo.setCloudVersion(cloudVersion);
+
+                        //Add Photo Details
+                        for (PhotoDetailResponse photoDetailResponse : photoResponse.getPhotoDetails()) {
+                            PhotoDetail photoDetail = new PhotoDetail();
+                            photoDetail.setParameterName(photoDetailResponse.getParameterName());
+                            photoDetail.setDisplayPreference(photoDetailResponse.getDisplayPreference());
+                            photoDetail.setValue(photoDetailResponse.getValue());
+
+                            photo.addPhotoDetail(photoDetail.getParameterName(), photoDetail);
+                        }
+
+                        //Add Visualizations
+                        boolean visualizationFailed = false;
+                        for (VisualizationImagesResponse visualizationImageResponse : photoResponse.getVisualizationImages()) {
+
+                            //Download Visualization Photos
+                            String sasURL = visualizationImageResponse.getVisualization();
+
+                            //String downloadFileName = photo.getFilename() + "_" + visualizationImageResponse.getVisualization();
+                            String downloadedFilepath = FileTransfer.Download(FileHelper.visualizationPrefix, FileHelper.photoDirectoryName, sasURL, this.getApplicationContext());
+
+                            if (downloadedFilepath != null)
+                            {
+                                //Add Visualization ImageLoadTask to Photo
+                                Visualization visualization = new Visualization();
+                                visualization.setVisualizationName(visualizationImageResponse.getVisualization());
+                                visualization.setFilePath(downloadedFilepath);
+                                photo.addVisualization(visualization);
+                            }
+                            else
+                            {
+                                //flag analysis as failed so the photos are downloaded again (Could instead use a placeholder photo)
+                                visualizationFailed = true;
+                                Log.e(this.getClass().getSimpleName(),"Visualization file could not be downloaded");
+                            }
+                        }
+                        if(visualizationFailed)
+                        {
+                            photo.setState(SinglePhoto.State.ANALYSIS_FAILED);
+                        }
+                        else
+                        {
+                            photo.setState(SinglePhoto.State.ANALYSIS_COMPLETE);
+                        }
+
+                    }
+                    else if (photoResponse.getErrorCode() == PhotoResponse.ErrorCodes.PhotoQueued)
+                    {
+                        photo.setState(SinglePhoto.State.ANALYSIS_INPROGRESS);
+                    }
+                    else if (photoResponse.getErrorCode() == PhotoResponse.ErrorCodes.MissingBlob)
+                    {
+                        photo.setState(SinglePhoto.State.UPLOAD_FAILED);
+                    }
+                    else if (photoResponse.getErrorCode() == PhotoResponse.ErrorCodes.OtherError)
+                    {
+                        photo.setState(SinglePhoto.State.ANALYSIS_FAILED);
+                    }
+                }
+                else
+                {
+                    photo.setState(SinglePhoto.State.ANALYSIS_FAILED);
+                }
+
+                ResultStore.GetResultStore().persist();
+                broadcastSinglePhotoStatusChange(resultIndex, this.getApplicationContext());
+
+            }
+        }
+    }
+
+    private void inspectAllPendingPhotos()
 	{		
 		List<Result> resultList = ResultStore.GetResultStore().getResults();
 		for(int resultIndex = 0; resultIndex < resultList.size(); resultIndex++)
@@ -234,6 +371,14 @@ public class PhotoInspectorService extends IntentService
 				}
 			}
 		}
+        List<SingleResult> singleList =SinglePhotoResultStore.GetResultStore().getResults();
+        for(int resultIndex = 0; resultIndex < singleList.size(); resultIndex++)
+        {
+            if(isSinglePhotoIncompleteState(singleList.get(resultIndex).getPhoto().getState()))
+            {
+               inspectSinglePhoto(resultIndex);
+            }
+        }
 	}
 	
 	private void reInspectPhotos(int resultIndex)
@@ -261,6 +406,17 @@ public class PhotoInspectorService extends IntentService
 		}
 	}
 
+    private boolean isSinglePhotoIncompleteState(SinglePhoto.State state)
+    {
+        if(state == SinglePhoto.State.NO_PHOTO || state == SinglePhoto.State.ANALYSIS_COMPLETE)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
 	public static void broadcastPhotoStatusChange(int resultIndex, int photoIndex, Context context)
 	{
 		Intent broadcastIntent = new Intent();
@@ -269,6 +425,14 @@ public class PhotoInspectorService extends IntentService
 		broadcastIntent.setAction(BROADCAST_PHOTO_STATUS_CHANGE);
 		context.sendBroadcast(broadcastIntent);
 	}
+
+    public static void broadcastSinglePhotoStatusChange(int resultIndex, Context context)
+    {
+        Intent broadcastIntent = new Intent();
+        broadcastIntent.putExtra(RESULT_INDEX, resultIndex);
+        broadcastIntent.setAction(BROADCAST_SINGLE_PHOTO_STATUS_CHANGE);
+        context.sendBroadcast(broadcastIntent);
+    }
 
     public static void broadcastMethodologyFetched(boolean success, Context context)
     {
@@ -441,6 +605,20 @@ public class PhotoInspectorService extends IntentService
 				break;
 			}
 		}
+
+        //Check for incomplete Photos
+        for(SingleResult result : SinglePhotoResultStore.GetResultStore().getResults())
+        {
+                if(isSinglePhotoIncompleteState(result.getPhoto().getState()))
+                {
+                    incompletePhotosPresent = true;
+                    break;
+                }
+            if(incompletePhotosPresent)
+            {
+                break;
+            }
+        }
 		
 		Log.i(TAG, "Check if we need to set alarm");
 		//Start Timer if there are incomplete photos

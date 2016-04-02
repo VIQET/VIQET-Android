@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright © 2015 Intel Corporation
+  ~ This program and the accompanying materials are made available under the terms of the Eclipse Public License v1.0,
+  ~  which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html . https://github.com/viqet
+  ~  Contributors:
+  ~     Intel Corporation - initial API and implementation and/or initial documentation
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:id="@+id/home_background_layout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
+    <ImageView
+        android:id="@+id/single_photo_display"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/add_photo"
+        android:layout_gravity="center_horizontal"/>
+        <ProgressBar
+            android:id="@+id/prog"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5">
+
+        <RelativeLayout
+            android:id="@+id/rel_layout_single_upload_and_eval"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageButton
+                android:id="@+id/upload_single_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/uploadphoto"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_layout_single_eval"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/radioLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radio_label"
+                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                android:gravity="center"/>
+
+            <RadioGroup
+                android:layout_marginTop="10dp"
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/radioLabel">
+
+                <RadioButton
+                    android:id="@+id/radioOutdoorLandscape"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_outdoor_landscape"
+                    android:checked="true"
+                    android:textSize="@dimen/button_text_size"
+                    android:textColor="@android:color/white" />
+
+                <RadioButton
+                    android:id="@+id/radioIndoor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/radio_indoor"
+                    android:textSize="@dimen/button_text_size"
+                    android:textColor="@android:color/white" />
+
+                <RadioButton
+                    android:id="@+id/radioOutdoorNight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/button_text_size"
+                    android:textColor="@android:color/white"
+                    android:text="@string/radio_outdoor_night" />
+            </RadioGroup>
+
+            <ImageButton
+                android:id="@+id/evaluate_single_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_below="@id/radioGroup"
+                android:background="@android:color/transparent"
+                android:src="@drawable/analyze"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_layout_result_State"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/tv_single_overallmos"
+                android:layout_alignParentTop="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:layout_margin="20dp"
+                android:text="@string/rating_label"
+                android:textStyle="bold"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@android:color/white"/>
+
+            <RatingBar
+                android:id="@+id/mosSingleImageRatingBar"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_single_overallmos"
+                android:layout_centerHorizontal="true"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="0.0"
+                android:stepSize="0.01" />
+
+
+                <TextView
+                    android:id="@+id/singleOverallMOS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/placeholderValue"
+                    android:layout_below="@id/mosSingleImageRatingBar"
+                    android:gravity="center"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@android:color/white"
+                    android:layout_marginTop="10dp"/>
+            <TextView
+                android:id="@+id/test_single_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/singleOverallMOS"
+                android:gravity="center"
+                android:textColor="@android:color/white"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rl_single_details"
+                android:background="@color/footer_background"
+                android:layout_alignParentBottom="true">
+                <ImageButton
+                    android:id="@+id/single_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:padding="8dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/details"
+                    android:background="@android:color/transparent"/>
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/rel_layout_upload_State"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textSize="@dimen/button_text_size"
+                android:textColor="@android:color/white"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>
